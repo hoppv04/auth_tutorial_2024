@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import FloatingShape from "./components/FloatingShape";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import EmailVerification from "./pages/EmailVerification";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={"Home"} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/verify-email" element={<EmailVerification />} />
       </Routes>
     </div>
   );
