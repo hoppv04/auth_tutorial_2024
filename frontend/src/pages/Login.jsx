@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Loader, Lock, Mail } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuthStore } from "../../store/authStore";
 import Input from "./../components/Input";
 
 const Login = () => {
@@ -9,10 +10,12 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const isLoading = false;
+  const { login, isLoading, error } = useAuthStore();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+
+    await login(formData);
   };
 
   return (
@@ -55,6 +58,8 @@ const Login = () => {
               Forgot password?
             </Link>
           </div>
+
+          {error && <p className="text-red-500 text-semibold mb-2">{error}</p>}
 
           <motion.button
             whileHover={{ scale: 1.02 }}
