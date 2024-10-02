@@ -1,8 +1,9 @@
+import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import FloatingShape from "./components/FloatingShape";
+import EmailVerification from "./pages/EmailVerification";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import EmailVerification from "./pages/EmailVerification";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify-email" element={<EmailVerification />} />
       </Routes>
+      <Toaster />
     </div>
   );
 }
