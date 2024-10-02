@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Loader, Lock, Mail } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuthStore } from "../../store/authStore";
+import { useAuthStore } from "../store/authStore";
 import Input from "./../components/Input";
 
 const Login = () => {
